@@ -15,11 +15,6 @@ MIN_REMOVAL = 30
 MAX_REMOVAL = 600
 COUNT_OPER = 3
 
-account = d.Decimal(0)
-transaction_dict = {}
-count = 0
-
-
 def print_data():
     """Показ транзакций"""
     print('Выполненные транзакции:')
@@ -69,7 +64,13 @@ def exit_data(account):
         account -= percent
         print(f'\nУдержан налог на богатство {RICHNESS_TAX}% в размере {percent} у.е.')
     print(f'Возьмите карту. На карте: {account} у.е.')
+    
+
+account = d.Decimal(0)
+transaction_dict = {}
+count = 0    
 command = ''
+
 while command != '0':
     print('Меню пользователя: \n'
         '1. Пополнить счёт \n'
@@ -94,5 +95,4 @@ while command != '0':
         case '0':
             exit_data(account)
     print()
-
 
